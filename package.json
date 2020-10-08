@@ -6,7 +6,8 @@
   "author": "Barnaby Cotter <barnabycotter@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "lerna run start --parallel"
+    "start": "lerna run start --parallel",
+    "install": "lerna run install"
   },
   "dependencies": {
     "lerna": "^3.22.1"
