@@ -41,10 +41,10 @@ function App() {
               Select Package...
             </MenuItem>
             <MenuItem value="1">One off at £40/bottle</MenuItem>
-            <MenuItem value="2">Rolling at </MenuItem>
-            <MenuItem value="3">6 month</MenuItem>
-            <MenuItem value="4">12 month</MenuItem>
-            <MenuItem value="5">18 month</MenuItem>
+            <MenuItem value="2">Rolling at £30/bottle</MenuItem>
+            <MenuItem value="3">6 month at £20/bottle</MenuItem>
+            <MenuItem value="4">12 month at £18/bottle</MenuItem>
+            <MenuItem value="5">18 month at £15/bottle</MenuItem>
           </Select>
           <div className="action">
           <Button color="primary" variant="contained" className="button" fullWidth type="submit">Calculate</Button>
