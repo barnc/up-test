@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "start": "lerna run start --parallel",
-    "install": "lerna run install"
+    "install": "lerna exec npm install"
   },
   "dependencies": {
     "lerna": "^3.22.1"
