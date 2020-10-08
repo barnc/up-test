@@ -1,0 +1,14 @@
+{
+  "name": "chargetest",
+  "version": "1.0.0",
+  "description": "Test App",
+  "main": "index.js",
+  "author": "Barnaby Cotter <barnabycotter@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "lerna run start --parallel"
+  },
+  "dependencies": {
+    "lerna": "^3.22.1"
+  }
+}
