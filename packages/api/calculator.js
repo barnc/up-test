@@ -8,12 +8,12 @@ export default ({
     const VAT = 1.2;
     let total = 0;
 
-    console.log(getPackageCost(packageId))
-    total += getPackageCost(packageId)
-    total *= quantity
+    let packageCost = getPackageCost(packageId)
+    let orderCost = packageCost * quantity;
+    total += orderCost;
     total *= VAT
+    total += getShippingCost(orderCost, postcode)
 
-    total += getShippingCost(postcode)
 
     return total.toFixed(2)
 }
@@ -31,13 +31,15 @@ const getPackageCost = (packageId) => {
     return packageCosts[packageId]
 }
 
-const getShippingCost = (postcode) => {
+const getShippingCost = (orderCost, postcode) => {
+    const freeShippingCutoff = 30
+    const baseDelivery = orderCost > freeShippingCutoff ? 0 : 7.24;
     // This would likely actually be done via an async service
-    const region = getRegionFromPostcode(postcode)
-    return region ? region.surcharge : 0;
+    const surchargeRegion = getSurchargeRegionFromPostcode(postcode)
+    return baseDelivery + (surchargeRegion ? surchargeRegion.surcharge : 0);
 }
 
-const getRegionFromPostcode = (postcode) => {
+const getSurchargeRegionFromPostcode = (postcode) => {
     return regions.find(region => {
         return region.patterns.some(pattern => {
             return pattern.ranges.some(range => {

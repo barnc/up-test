@@ -36,9 +36,12 @@ function App() {
         <form className="form" onSubmit={handleSubmit}>
           <TextField label="Postcode" name="postcode" onChange={updateField("postcode")} />
           <TextField type="number" label="Quantity" name="quantity" onChange={updateField("quantity")} />
-          <Select placeholder="Package" label="Package" name="packageId" onChange={updateField("packageId")}>
-            <MenuItem value="1">One off</MenuItem>
-            <MenuItem value="2">Rolling</MenuItem>
+          <Select className="select" defaultValue="none" placeholder="Package" label="Package" name="packageId" onChange={updateField("packageId")}>
+            <MenuItem value="none" disabled>
+              Select Package...
+            </MenuItem>
+            <MenuItem value="1">One off at £40/bottle</MenuItem>
+            <MenuItem value="2">Rolling at </MenuItem>
             <MenuItem value="3">6 month</MenuItem>
             <MenuItem value="4">12 month</MenuItem>
             <MenuItem value="5">18 month</MenuItem>
